@@ -15,6 +15,22 @@
 
     <main id="app">
 
+        <section class="summary">
+            <h4>Cadastrar Produto</h4>
+
+            <form>
+                <div class="description">
+                    <label for="name">Name</label><br>
+                    <input id="name" v-model="newProduct.name"><br>
+    
+                    <label for="price">Price</label><br>
+                    <input type="number" id="price" v-model="newProduct.price"><br>
+                    <input type="button" value="save" @click="addProduct()">
+                </div>
+               
+            </form>
+        </section>
+   
         <section class="items">
             <h4>Selecione os produtos</h4>
             <div 

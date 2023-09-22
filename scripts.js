@@ -67,7 +67,12 @@ var products = [
 const SelfServiceMachine = {
     data() {
         return {
-            products: window.products
+            products: window.products,
+            newProduct: {
+                quantity: 1,
+                active: false,
+                photo: "img/big-mac.png"
+            }
         }
     },
     methods: {
@@ -79,6 +84,17 @@ const SelfServiceMachine = {
             }
            });
            return total.toFixed(2);
+        },
+        addProduct: function() {
+            if(this.newProduct.name && this.newProduct.price){
+                this.products.push(this.newProduct);
+                this.newProduct = {
+                    quantity: 1,
+                    active: false,
+                    photo: "img/big-mac.png"
+                };
+            }
+          
         }
     }
 };
